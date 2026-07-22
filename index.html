@@ -102,7 +102,7 @@
         .mobile-toggle { display: none; font-size: 1.8rem; color: var(--text-dark); cursor: pointer; }
 
         /* VIDEO HERO */
-        .hero { height: 100vh; min-height: 600px; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; margin-top: 0; }
+        .hero { min-height: 100vh; height: auto; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; margin-top: 0; padding-top: 100px; padding-bottom: 80px; }
         .hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; transform: translateX(-50%) translateY(-50%); z-index: 0; opacity: 0.5; object-fit: cover; }
         .hero-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%); z-index: 1; }
         
@@ -117,14 +117,13 @@
         .stat-box h3 span { color: var(--brand-red); }
         .stat-box p { color: var(--text-light); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; font-weight: 600; margin: 0; }
 
-        /* FEATURED SERVICES (FIXED: UNZOOMED WITH MARGIN/PADDING) */
+        /* FEATURED SERVICES */
         .section-title { font-size: 3.5rem; margin-bottom: 20px; color: var(--text-dark); text-transform: uppercase; line-height: 1.2; }
         .section-subtitle { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; padding: 0 15px; }
         
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .service-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); transition: var(--transition); border: 1px solid #edf2f7; position: relative; display: flex; flex-direction: column; }
         
-        /* Fixed: Unzoomed & Margined Image Wrap */
         .service-img-wrap { width: 100%; height: 260px; background: #0c0c0c; padding: 15px; overflow: hidden; position: relative; display: flex; align-items: center; justify-content: center; }
         .service-img-wrap img { width: 100%; height: 100%; object-fit: contain; transition: 0.6s ease; border-radius: 8px; }
         .service-card:hover .service-img-wrap img { transform: scale(1.04); }
@@ -160,7 +159,7 @@
         .process-info h3 { font-size: 1.5rem; margin-bottom: 12px; color: var(--text-dark); }
         .process-info p { color: var(--text-gray); line-height: 1.7; margin: 0; }
 
-        /* PRODUCTS WE USED (FIXED: BARA KIYA + NO FADE/NO GRAYSCALE) */
+        /* PRODUCTS WE USED */
         .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
         .product-brand-card { background: #fff; padding: 40px 30px; border-radius: 16px; text-align: center; border: 1px solid #edf2f7; transition: var(--transition); box-shadow: var(--shadow-soft); }
         .product-brand-card img { height: 120px; width: auto; max-width: 90%; object-fit: contain; margin: 0 auto 20px; filter: none !important; opacity: 1 !important; transition: var(--transition); }
@@ -169,7 +168,7 @@
         .product-brand-card h4 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-dark); }
         .product-brand-card p { font-size: 0.95rem; color: var(--text-gray); line-height: 1.5; }
 
-        /* GALLERY UPDATED STRUCTURE (IMAGE 4 FIX) */
+        /* GALLERY UPDATED STRUCTURE */
         .gallery-videos-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 30px; }
         .gallery-photos-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
         .gallery-item { position: relative; height: 300px; border-radius: 16px; overflow: hidden; cursor: pointer; box-shadow: var(--shadow-soft); border: 1px solid #edf2f7; background: #000; }
@@ -213,7 +212,7 @@
         .faq-item.active .faq-answer { padding: 0 30px 25px; max-height: 1000px; }
         .faq-item.active .faq-question i { transform: rotate(45deg); }
 
-        /* LATEST BLOGS (FIXED: UNZOOMED PROPER MARGIN - IMAGE 5 FIX) */
+        /* LATEST BLOGS */
         .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
         .blog-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); transition: var(--transition); border: 1px solid #edf2f7; display: flex; flex-direction: column; }
         .blog-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); }
@@ -307,6 +306,7 @@
         }
         
         @media (max-width: 768px) {
+            .hero { padding-top: 90px; padding-bottom: 70px; }
             .hero-content h1 { font-size: 3rem; }
             .section-title { font-size: 2.5rem; }
             .cta-banner h2 { font-size: 3rem; }
@@ -321,8 +321,8 @@
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1.1rem; }
+            .hero-content h1 { font-size: 2.2rem; margin-bottom: 15px; }
+            .hero-content p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 25px; }
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
             .stat-box h3 { font-size: 2.5rem; }
             .section-title { font-size: 2rem; }
@@ -372,7 +372,7 @@
         </div>
 
         <div class="nav-actions">
-           
+            
             <a href="tel:+917778883856" class="nav-icon-btn" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
             <a href="appointment.html" class="btn-outline">Book Now</a>
             <button class="nav-icon-btn mobile-toggle" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
@@ -488,7 +488,6 @@
                     <div class="service-content">
                         <h3 class="font-heading">Premium Car Spa & Wash</h3>
                         <p>More than just a car wash. Our Premium Car Spa includes snow foam washing, steam cleaning, interior vacuuming, dashboard detailing, tyre dressing, engine bay cleaning and premium polishing to restore your vehicle's shine inside and out.</p>
-                        <!-- FIX: Changed from 'premium-car-wash.html' to 'carwash.html' -->
                         <a href="carwash.html" class="service-link">View Service <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -1015,7 +1014,7 @@ Strongly Recommended. Thanks..."</p>
                 });
             });
 
-            // 7. Lightbox Modal for Gallery Images & Videos (IMAGE 4 CLICK TO OPEN FEATURE)
+            // 7. Lightbox Modal for Gallery Images & Videos 
             const lightboxModal = document.getElementById('lightboxModal');
             const lightboxContent = document.getElementById('lightboxContent');
             const lightboxClose = document.getElementById('lightboxClose');
