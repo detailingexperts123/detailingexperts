@@ -1,1 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
 
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0,
+                   maximum-scale=1.0, user-scalable=no">
+
+    <meta name="theme-color" content="#050505">
+
+    <meta name="description"
+          content="Detailing Experts - Premium Car & Bike Care. Save our contact, WhatsApp us, visit our website or find your nearest location.">
+
+    <meta property="og:title"
+          content="Detailing Experts | Digital Contact Card">
+
+    <meta property="og:description"
+          content="Connect with Detailing Experts - Premium Car & Bike Care">
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:url"
+          content="https://detailingexperts.net/card">
+
+    <title>Detailing Experts | Digital Contact Card</title>
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    #303030 0%,
+                    #111111 30%,
+                    #050505 65%,
+                    #020202 100%
+                );
+
+            color: #ffffff;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            padding:
+                env(safe-area-inset-top)
+                16px
+                calc(35px + env(safe-area-inset-bottom));
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           PROFILE
+        ===================================================== */
+
+        .profile {
+            text-align: center;
+            padding: 30px 15px 18px;
+        }
+
+
+        .logo-container {
+            width: 112px;
+            height: 112px;
+
+            margin: 0 auto 18px;
+
+            background: #ffffff;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            box-shadow:
+                0 15px 50px rgba(0,0,0,.55);
+        }
+
+
+        .logo {
+            width: 92px;
+            height: 92px;
+
+            object-fit: contain;
+
+            border-radius: 50%;
+        }
+
+
+        .business-name {
+            font-size: 29px;
+            line-height: 1.1;
+
+            font-weight: 900;
+
+            letter-spacing: -1px;
+        }
+
+
+        .tagline {
+            margin-top: 8px;
+
+            color: #bdbdbd;
+
+            font-size: 14px;
+
+            letter-spacing: .2px;
+        }
+
+
+        .verified {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 5px;
+
+            margin-top: 10px;
+
+            padding: 6px 11px;
+
+            border-radius: 100px;
+
+            background: rgba(255,255,255,.07);
+
+            border: 1px solid rgba(255,255,255,.12);
+
+            color: #d8d8d8;
+
+            font-size: 11px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           SAVE CONTACT
+        ===================================================== */
+
+        .save-contact {
+            width: 100%;
+
+            border: none;
+
+            border-radius: 15px;
+
+            padding: 17px 18px;
+
+            background: #ffffff;
+
+            color: #000000;
+
+            font-size: 16px;
+
+            font-weight: 800;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.25);
+
+            transition:
+                transform .15s ease,
+                opacity .15s ease;
+        }
+
+
+        .save-contact:active {
+            transform: scale(.98);
+        }
+
+
+        /* =====================================================
+           ACTION BUTTONS
+        ===================================================== */
+
+        .actions {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 10px;
+
+            margin-top: 12px;
+        }
+
+
+        .action {
+            min-height: 70px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 6px;
+
+            background:
+                rgba(255,255,255,.055);
+
+            border:
+                1px solid rgba(255,255,255,.10);
+
+            border-radius: 15px;
+
+            transition:
+                background .2s ease,
+                transform .15s ease;
+        }
+
+
+        .action:active {
+            transform: scale(.98);
+        }
+
+
+        .action-icon {
+            font-size: 21px;
+        }
+
+
+        .action-label {
+            font-size: 12px;
+
+            font-weight: 650;
+
+            color: #e8e8e8;
+        }
+
+
+        .whatsapp {
+            border-color:
+                rgba(37,211,102,.35);
+        }
+
+
+        /* =====================================================
+           SECTIONS
+        ===================================================== */
+
+        .section {
+            margin-top: 14px;
+
+            padding: 20px;
+
+            background:
+                rgba(16,16,16,.90);
+
+            border:
+                1px solid rgba(255,255,255,.09);
+
+            border-radius: 18px;
+
+            backdrop-filter: blur(10px);
+        }
+
+
+        .section-title {
+            font-size: 17px;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           SERVICES
+        ===================================================== */
+
+        .services {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .service {
+            padding: 9px 12px;
+
+            border-radius: 100px;
+
+            background: #1b1b1b;
+
+            border:
+                1px solid #303030;
+
+            color: #dedede;
+
+            font-size: 12px;
+
+            line-height: 1;
+        }
+
+
+        /* =====================================================
+           LOCATIONS
+        ===================================================== */
+
+        .location-card {
+            padding: 15px 0;
+
+            border-bottom:
+                1px solid #262626;
+        }
+
+
+        .location-card:first-child {
+            padding-top: 0;
+        }
+
+
+        .location-card:last-child {
+            padding-bottom: 0;
+
+            border-bottom: none;
+        }
+
+
+        .location-name {
+            font-size: 15px;
+
+            font-weight: 800;
+
+            margin-bottom: 7px;
+        }
+
+
+        .location-address {
+            color: #aaaaaa;
+
+            font-size: 13px;
+
+            line-height: 1.55;
+
+            margin-bottom: 11px;
+        }
+
+
+        .direction-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding: 9px 12px;
+
+            background: #1e1e1e;
+
+            border:
+                1px solid #363636;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+
+        .coming-soon {
+            display: inline-block;
+
+            padding: 7px 10px;
+
+            border-radius: 9px;
+
+            background: #181818;
+
+            color: #777777;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           QR
+        ===================================================== */
+
+        .qr-section {
+            text-align: center;
+        }
+
+
+        .qr-box {
+            width: 225px;
+            height: 225px;
+
+            margin:
+                14px auto 16px;
+
+            padding: 13px;
+
+            background: #ffffff;
+
+            border-radius: 17px;
+        }
+
+
+        #qrcode {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        #qrcode img,
+        #qrcode canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+
+        .qr-description {
+            color: #999999;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+
+        .nfc-note {
+            margin-top: 10px;
+
+            color: #d2d2d2;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           CONTACT INFORMATION
+        ===================================================== */
+
+        .contact-row {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid #252525;
+        }
+
+
+        .contact-row:last-child {
+            border-bottom: none;
+
+            padding-bottom: 0;
+        }
+
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+
+            flex-shrink: 0;
+
+            border-radius: 11px;
+
+            background: #1c1c1c;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 17px;
+        }
+
+
+        .contact-info {
+            min-width: 0;
+        }
+
+
+        .contact-label {
+            color: #777777;
+
+            font-size: 10px;
+
+            margin-bottom: 3px;
+        }
+
+
+        .contact-value {
+            color: #eeeeee;
+
+            font-size: 14px;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        /* =====================================================
+           SHARE
+        ===================================================== */
+
+        .share-button {
+            width: 100%;
+
+            padding: 14px;
+
+            background: transparent;
+
+            border:
+                1px solid #383838;
+
+            border-radius: 13px;
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            font-weight: 750;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .footer {
+            text-align: center;
+
+            padding: 25px 10px 5px;
+
+            color: #666666;
+
+            font-size: 11px;
+
+            line-height: 1.6;
+        }
+
+
+        .footer strong {
+            color: #999999;
+        }
+
+
+        /* =====================================================
+           TOAST
+        ===================================================== */
+
+        .toast {
+            position: fixed;
+
+            left: 50%;
+            bottom: 25px;
+
+            transform:
+                translate(-50%, 20px);
+
+            background: #ffffff;
+
+            color: #000000;
+
+            padding: 12px 18px;
+
+            border-radius: 100px;
+
+            font-size: 13px;
+
+            font-weight: 750;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                opacity .25s ease,
+                transform .25s ease;
+
+            z-index: 9999;
+
+            white-space: nowrap;
+        }
+
+
+        .toast.show {
+            opacity: 1;
+
+            transform:
+                translate(-50%, 0);
+        }
+
+
+        /* =====================================================
+           SMALL DEVICES
+        ===================================================== */
+
+        @media (max-width: 360px) {
+
+            body {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .business-name {
+                font-size: 26px;
+            }
+
+            .qr-box {
+                width: 195px;
+                height: 195px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =====================================================
+         PROFILE
+    ====================================================== -->
+
+    <header class="profile">
+
+        <div class="logo-container">
+
+            <!--
+                YOUR LOGO
+
+                If logo.png is in the ROOT of your GitHub
+                repository, keep:
+
+                    /logo.png
+
+                If logo.png is inside /card/, change to:
+
+                    logo.png
+            -->
+
+            <img
+                src="/logo.png"
+                alt="Detailing Experts Logo"
+                class="logo"
+            >
+
+        </div>
+
+
+        <h1 class="business-name">
+            DETAILING EXPERTS
+        </h1>
+
+
+        <p class="tagline">
+            Premium Car &amp; Bike Care
+        </p>
+
+
+        <div class="verified">
+            ✓ Official Digital Contact Card
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         SAVE CONTACT
+    ====================================================== -->
+
+    <button
+        class="save-contact"
+        onclick="saveContact()"
+    >
+
+        ＋ Save Detailing Experts Contact
+
+    </button>
+
+
+
+    <!-- =====================================================
+         QUICK ACTIONS
+    ====================================================== -->
+
+    <div class="actions">
+
+
+        <!-- CALL -->
+
+        <a
+            class="action"
+            href="tel:+918488955005"
+            onclick="trackEvent('call')"
+        >
+
+            <span class="action-icon">
+                📞
+            </span>
+
+            <span class="action-label">
+                Call
+            </span>
+
+        </a>
+
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="action whatsapp"
+            href="https://wa.me/918488955005?text=Hi%20Detailing%20Experts%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+            target="_blank"
+            rel="noopener"
+            onclick="trackEvent('whatsapp')"
+        >
+
+            <span class="action-icon">
+                💬
+            </span>
+
+            <span class="action-label">
+                WhatsApp
+            </span>
+
+        </a>
+
+
+
+        <!-- WEBSITE -->
+
+        <a
+            class="action"
+            href="https://detailingexperts.net/"
+            target="_blank"
+            rel="noopener"
+            onclick="trackEvent('website')"
+        >
+
+            <span class="action-icon">
+                🌐
+            </span>
+
+            <span class="action-label">
+                Website
+            </span>
+
+        </a>
+
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="action"
+            href="https://www.instagram.com/detailingexpertsofficial/"
+            target="_blank"
+            rel="noopener"
+            onclick="trackEvent('instagram')"
+        >
+
+            <span class="action-icon">
+                📸
+            </span>
+
+            <span class="action-label">
+                Instagram
+            </span>
+
+        </a>
+
+
+
+        <!-- GOOGLE -->
+
+        <a
+            class="action"
+            href="https://www.google.com/search?q=Detailing+Experts+Vadodara"
+            target="_blank"
+            rel="noopener"
+            onclick="trackEvent('google')"
+        >
+
+            <span class="action-icon">
+                ⭐
+            </span>
+
+            <span class="action-label">
+                Google
+            </span>
+
+        </a>
+
+
+
+        <!-- SHARE -->
+
+        <button
+            class="action"
+            onclick="shareCard()"
+        >
+
+            <span class="action-icon">
+                ↗
+            </span>
+
+            <span class="action-label">
+                Share
+            </span>
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Our Services
+        </h2>
+
+
+        <div class="services">
+
+            <span class="service">
+                🚘 Car Detailing
+            </span>
+
+            <span class="service">
+                ✨ Ceramic Coating
+            </span>
+
+            <span class="service">
+                🫧 Premium Foam Wash
+            </span>
+
+            <span class="service">
+                🏍️ Bike Detailing
+            </span>
+
+            <span class="service">
+                🧴 Car Care Products
+            </span>
+
+            <span class="service">
+                🧽 Microfiber Cloths
+            </span>
+
+            <span class="service">
+                🪥 Cleaning Brushes
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LOCATIONS
+    ====================================================== -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Our Locations
+        </h2>
+
+
+
+        <!-- VADODARA -->
+
+        <div class="location-card">
+
+            <div class="location-name">
+                📍 Vadodara
+            </div>
+
+
+            <div class="location-address">
+
+                Basement 2, Eva The Mall,
+                Manjalpur, Vadodara,
+                Gujarat
+
+            </div>
+
+
+            <a
+                class="direction-button"
+                href="https://maps.app.goo.gl/22zXeTdqh125BdXY6"
+                target="_blank"
+                rel="noopener"
+                onclick="trackEvent('maps_vadodara')"
+            >
+
+                🧭 Get Directions
+
+            </a>
+
+        </div>
+
+
+
+        <!-- GODHRA -->
+
+        <div class="location-card">
+
+            <div class="location-name">
+                📍 Godhra
+            </div>
+
+
+            <div class="location-address">
+
+                1, Opp. Hotel Luxura,
+                Dahod Road, Godhra,
+                Gujarat
+
+            </div>
+
+
+            <a
+                class="direction-button"
+                href="https://maps.app.goo.gl/qoqqnk1Wdogto5hE9"
+                target="_blank"
+                rel="noopener"
+                onclick="trackEvent('maps_godhra')"
+            >
+
+                🧭 Get Directions
+
+            </a>
+
+        </div>
+
+
+
+        <!-- JAIPUR -->
+
+        <div class="location-card">
+
+            <div class="location-name">
+                📍 Jaipur
+            </div>
+
+
+            <div class="location-address">
+
+                Plot No. 87, Sikar Rd,
+                Murlipura, Jaipur,
+                Rajasthan 302039
+
+            </div>
+
+
+            <span class="coming-soon">
+
+                Directions link coming soon
+
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QR CODE
+    ====================================================== -->
+
+    <section class="section qr-section">
+
+        <h2 class="section-title">
+            Scan to Connect
+        </h2>
+
+
+        <div class="qr-box">
+
+            <div id="qrcode"></div>
+
+        </div>
+
+
+        <p class="qr-description">
+
+            Scan this QR code to open
+            the official Detailing Experts
+            digital contact card.
+
+        </p>
+
+
+        <p class="nfc-note">
+
+            📱 NFC compatible — tap your phone
+            on an NFC card to open this page.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section class="section">
+
+        <h2 class="section-title">
+            Contact Details
+        </h2>
+
+
+
+        <!-- PHONE -->
+
+        <a
+            class="contact-row"
+            href="tel:+918488955005"
+            onclick="trackEvent('contact_phone')"
+        >
+
+            <div class="contact-icon">
+                📞
+            </div>
+
+
+            <div class="contact-info">
+
+                <div class="contact-label">
+                    PHONE
+                </div>
+
+                <div class="contact-value">
+                    +91 84889 55005
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            class="contact-row"
+            href="https://wa.me/918488955005"
+            target="_blank"
+            rel="noopener"
+            onclick="trackEvent('contact_whatsapp')"
+        >
+
+            <div class="contact-icon">
+                💬
+            </div>
+
+
+            <div class="contact-info">
+
+                <div class="contact-label">
+                    WHATSAPP
+                </div>
+
+                <div class="contact-value">
+                    +91 84889 55005
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- WEBSITE -->
+
+        <a
+            class="contact-row"
+            href="https://detailingexperts.net/"
+            target="_blank"
+            rel="noopener"
+            onclick="trackEvent('contact_website')"
+        >
+
+            <div class="contact-icon">
+                🌐
+            </div>
+
+
+            <div class="contact-info">
+
+                <div class="contact-label">
+                    WEBSITE
+                </div>
+
+                <div class="contact-value">
+                    detailingexperts.net
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            class="contact-row"
+            href="https://www.instagram.com/detailingexpertsofficial/"
+            target="_blank"
+            rel="noopener"
+            onclick="trackEvent('contact_instagram')"
+        >
+
+            <div class="contact-icon">
+                📸
+            </div>
+
+
+            <div class="contact-info">
+
+                <div class="contact-label">
+                    INSTAGRAM
+                </div>
+
+                <div class="contact-value">
+                    @detailingexpertsofficial
+                </div>
+
+            </div>
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <strong>
+            DETAILING EXPERTS
+        </strong>
+
+        <br>
+
+        Premium Car &amp; Bike Care
+
+        <br><br>
+
+        © <span id="year"></span>
+        Detailing Experts
+
+    </footer>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     TOAST
+====================================================== -->
+
+<div
+    id="toast"
+    class="toast"
+>
+    Contact card created
+</div>
+
+
+
+<!-- =====================================================
+     QR CODE LIBRARY
+====================================================== -->
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+></script>
+
+
+
+<script>
+
+    /* =====================================================
+       CONFIGURATION
+    ===================================================== */
+
+    const CONFIG = {
+
+        businessName:
+            "Detailing Experts",
+
+        phone:
+            "+918488955005",
+
+        displayPhone:
+            "+91 84889 55005",
+
+        website:
+            "https://detailingexperts.net/",
+
+        cardUrl:
+            "https://detailingexperts.net/card",
+
+        instagram:
+            "https://www.instagram.com/detailingexpertsofficial/",
+
+        address:
+            "Vadodara, Gujarat, India"
+
+    };
+
+
+
+    /* =====================================================
+       YEAR
+    ===================================================== */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+
+    /* =====================================================
+       QR CODE
+    ===================================================== */
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            const qr =
+                document.getElementById("qrcode");
+
+
+            if (
+                typeof QRCode !== "undefined"
+            ) {
+
+                new QRCode(
+                    qr,
+                    {
+
+                        text:
+                            CONFIG.cardUrl,
+
+                        width:
+                            195,
+
+                        height:
+                            195,
+
+                        correctLevel:
+                            QRCode.CorrectLevel.H
+
+                    }
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* =====================================================
+       SAVE CONTACT
+    ===================================================== */
+
+    function saveContact() {
+
+        trackEvent(
+            "save_contact"
+        );
+
+
+        const vcard =
+
+`BEGIN:VCARD
+VERSION:3.0
+FN:${CONFIG.businessName}
+ORG:${CONFIG.businessName}
+TEL;TYPE=CELL:${CONFIG.phone}
+URL:${CONFIG.website}
+X-SOCIALPROFILE;TYPE=instagram:${CONFIG.instagram}
+ADR;TYPE=WORK:;;Basement 2, Eva The Mall, Manjalpur, Vadodara, Gujarat;;;
+NOTE:Premium Car & Bike Care. Locations in Vadodara, Godhra and Jaipur.
+END:VCARD`;
+
+
+        const blob =
+            new Blob(
+                [vcard],
+                {
+                    type:
+                        "text/vcard;charset=utf-8"
+                }
+            );
+
+
+        const url =
+            URL.createObjectURL(blob);
+
+
+        const link =
+            document.createElement("a");
+
+
+        link.href = url;
+
+
+        link.download =
+            "Detailing-Experts.vcf";
+
+
+        document.body.appendChild(
+            link
+        );
+
+
+        link.click();
+
+
+        document.body.removeChild(
+            link
+        );
+
+
+        setTimeout(
+            function () {
+
+                URL.revokeObjectURL(
+                    url
+                );
+
+            },
+            1000
+        );
+
+
+        showToast(
+            "Contact card created"
+        );
+
+    }
+
+
+
+    /* =====================================================
+       SHARE CARD
+    ===================================================== */
+
+    async function shareCard() {
+
+        trackEvent(
+            "share"
+        );
+
+
+        const shareData = {
+
+            title:
+                "Detailing Experts",
+
+            text:
+                "Connect with Detailing Experts - Premium Car & Bike Care",
+
+            url:
+                CONFIG.cardUrl
+
+        };
+
+
+        if (
+            navigator.share &&
+            (
+                !navigator.canShare ||
+                navigator.canShare(
+                    shareData
+                )
+            )
+        ) {
+
+            try {
+
+                await navigator.share(
+                    shareData
+                );
+
+                return;
+
+            } catch (error) {
+
+                if (
+                    error.name ===
+                    "AbortError"
+                ) {
+
+                    return;
+
+                }
+
+            }
+
+        }
+
+
+        /* FALLBACK */
+
+        try {
+
+            await navigator.clipboard.writeText(
+                CONFIG.cardUrl
+            );
+
+
+            showToast(
+                "Card link copied"
+            );
+
+        } catch (error) {
+
+            window.prompt(
+                "Copy this link:",
+                CONFIG.cardUrl
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       TOAST
+    ===================================================== */
+
+    function showToast(
+        message
+    ) {
+
+        const toast =
+            document.getElementById(
+                "toast"
+            );
+
+
+        toast.textContent =
+            message;
+
+
+        toast.classList.add(
+            "show"
+        );
+
+
+        setTimeout(
+            function () {
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            2500
+        );
+
+    }
+
+
+
+    /* =====================================================
+       BASIC EVENT TRACKING
+    ===================================================== */
+
+    function trackEvent(
+        eventName
+    ) {
+
+        try {
+
+            const params =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+
+            const source =
+                params.get("source")
+                || "direct";
+
+
+            console.log(
+                "Detailing Experts:",
+                eventName,
+                "source:",
+                source
+            );
+
+
+        } catch (error) {
+
+            console.log(
+                "Tracking error",
+                error
+            );
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       PROFILE VIEW
+    ===================================================== */
+
+    trackEvent(
+        "profile_view"
+    );
+
+</script>
+
+
+</body>
+</html>
