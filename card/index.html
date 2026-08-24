@@ -1348,34 +1348,35 @@
 
     function saveContact() {
 
-        trackEvent(
-            "save_contact"
-        );
-
-
+        trackEvent("save_contact");
+        
         const vcard =
 
 `BEGIN:VCARD
 VERSION:3.0
-FN:${CONFIG.businessName}
-ORG:${CONFIG.businessName}
-TEL;TYPE=CELL:${CONFIG.phone}
-URL:${CONFIG.website}
-X-SOCIALPROFILE;TYPE=instagram:${CONFIG.instagram}
+FN:Detailing Experts
+ORG:Detailing Experts
+TEL;TYPE=CELL:+918488955005
+URL:https://detailingexperts.net/
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/detailingexpertsofficial/
 ADR;TYPE=WORK:;;Basement 2, Eva The Mall, Manjalpur, Vadodara, Gujarat;;;
-NOTE:Premium Car & Bike Care. Locations in Vadodara, Godhra and Jaipur.
+NOTE:Premium Car & Bike Care
+
+OUR LOCATIONS:
+Vadodara - Basement 2, Eva The Mall, Manjalpur, Vadodara, Gujarat
+Godhra - 1, Opp. Hotel Luxura, Dahod Road, Godhra, Gujarat
+Jaipur - Plot No. 87, Sikar Rd, Murlipura, Jaipur, Rajasthan 302039
+
+Website: https://detailingexperts.net/
+Instagram: https://www.instagram.com/detailingexpertsofficial/
 END:VCARD`;
-
-
-        const blob =
-            new Blob(
+        
+        const blob = new Blob(
                 [vcard],
                 {
-                    type:
-                        "text/vcard;charset=utf-8"
+                    type: "text/vcard;charset=utf-8"
                 }
             );
-
 
         const url =
             URL.createObjectURL(blob);
