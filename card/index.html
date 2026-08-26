@@ -1400,6 +1400,47 @@
         link.style.display =
             "none";
 
+        document.body.appendChild(link);
+
+        link.click();
+
+        document.body.removeChild(link);
+
+        /*
+        * Clean up
+        */
+
+        setTimeout(function () {
+
+            URL.revokeObjectURL(url);
+
+        }, 10000);
+
+        /*
+        * Android instruction
+        */
+
+        const isAndroid =
+            /Android/i.test(
+                navigator.userAgent
+            );
+
+        if (isAndroid) {
+
+            showToast(
+                "Contact file downloaded — tap it to save"
+            );
+
+        } else {
+
+            showToast(
+                "Contact card ready"
+            );
+
+        }
+
+    }
+
 
 Website: https://detailingexperts.net/
 Instagram: https://www.instagram.com/detailingexpertsofficial/
