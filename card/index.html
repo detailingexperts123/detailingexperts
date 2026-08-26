@@ -1375,6 +1375,31 @@
         * Create VCF file
         */
 
+        const blob = new Blob(
+            [vcard],
+            {
+                type: "text/vcard"
+            }
+        );
+
+        const url =
+            URL.createObjectURL(blob);
+
+        /*
+        * Create download/open link
+        */
+
+        const link =
+            document.createElement("a");
+
+        link.href = url;
+
+        link.download =
+            "Detailing-Experts.vcf";
+
+        link.style.display =
+            "none";
+
 
 Website: https://detailingexperts.net/
 Instagram: https://www.instagram.com/detailingexpertsofficial/
