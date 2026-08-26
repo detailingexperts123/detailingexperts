@@ -1350,7 +1350,30 @@
 
         trackEvent("save_contact");
         
-        const vcard =
+        /*
+        * Android-compatible vCard
+        *
+        * Keep this simple.
+        * Android Contacts can be very strict about
+        * vCard formatting.
+        */
+
+        const vcard = [
+            "BEGIN:VCARD",
+            "VERSION:3.0",
+            "FN:Detailing Experts",
+            "N:Detailing Experts;;;;",
+            "ORG:Detailing Experts",
+            "TEL;TYPE=CELL:+91XXXXXXXXXX",
+            "URL:https://detailingexperts.net/",
+            "ADR;TYPE=WORK:;;Basement 2, Eva The Mall, Manjalpur;Vadodara;Gujarat;;India",
+            "NOTE:Premium Car & Bike Care. Vadodara: Basement 2, Eva The Mall, Manjalpur, Vadodara, Gujarat. Godhra: 1, Opp. Hotel Luxura, Dahod Road, Godhra, Gujarat. Jaipur: Plot No. 87, Sikar Rd, Murlipura, Jaipur, Rajasthan 302039.",
+            "END:VCARD"
+        ].join("\r\n") + "\r\n";
+
+        /*
+        * Create VCF file
+        */
 
 `BEGIN:VCARD
 VERSION:3.0
