@@ -1,674 +1,1868 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0,
-                   maximum-scale=1.0, user-scalable=no">
+<meta charset="UTF-8">
 
-    <meta name="theme-color" content="#050505">
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <meta name="description"
-          content="Detailing Experts - Premium Car & Bike Care. Save our contact, WhatsApp us, visit our website or find your nearest location.">
+<meta
+    name="theme-color"
+    content="#020611"
+>
 
-    <meta property="og:title"
-          content="Detailing Experts | Digital Contact Card">
+<meta
+    name="description"
+    content="Akash Chaudhary - Founder & Detailing Expert at Detailing Experts. Premium Car & Bike Care."
+>
 
-    <meta property="og:description"
-          content="Connect with Detailing Experts - Premium Car & Bike Care">
+<title>
+    Akash Chaudhary | Detailing Experts
+</title>
 
-    <meta property="og:type" content="website">
 
-    <meta property="og:url"
-          content="https://detailingexperts.net/card">
+<!-- =====================================================
+     GOOGLE FONT
+===================================================== -->
 
-    <title>Detailing Experts | Digital Contact Card</title>
+<link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
 
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
 
-    <style>
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+>
 
-        /* =====================================================
-           RESET
-        ===================================================== */
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<!-- =====================================================
+     QR CODE LIBRARY
+===================================================== -->
 
-        html {
-            scroll-behavior: smooth;
-        }
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+></script>
 
-        body {
-            min-height: 100vh;
 
-            background:
-                radial-gradient(
-                    circle at 50% -10%,
-                    #303030 0%,
-                    #111111 30%,
-                    #050505 65%,
-                    #020202 100%
-                );
+<style>
 
-            color: #ffffff;
+/* =====================================================
+   ROOT
+===================================================== */
 
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Helvetica,
-                Arial,
-                sans-serif;
+:root {
 
-            padding:
-                env(safe-area-inset-top)
-                16px
-                calc(35px + env(safe-area-inset-bottom));
-        }
+    --bg:
+        #020611;
 
+    --bg-soft:
+        #07101f;
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    --card:
+        rgba(9, 17, 31, .86);
 
+    --card-strong:
+        rgba(12, 24, 42, .95);
 
-        button {
-            font-family: inherit;
-        }
+    --border:
+        rgba(120, 170, 255, .18);
 
+    --blue:
+        #258cff;
 
-        /* =====================================================
-           MAIN CONTAINER
-        ===================================================== */
+    --blue-light:
+        #69b5ff;
 
-        .container {
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+    --blue-dark:
+        #073a9a;
 
+    --text:
+        #ffffff;
 
-        /* =====================================================
-           PROFILE
-        ===================================================== */
+    --text-soft:
+        #c8d0dc;
 
-        .profile {
-            text-align: center;
-            padding: 30px 15px 18px;
-        }
+    --text-muted:
+        #8c98a9;
 
+}
 
-        .logo-container {
-            width: 112px;
-            height: 112px;
 
-            margin: 0 auto 18px;
+/* =====================================================
+   GLOBAL
+===================================================== */
 
-            background: #ffffff;
+* {
+    box-sizing: border-box;
+}
 
-            border-radius: 50%;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+html {
+    scroll-behavior: smooth;
+}
 
-            box-shadow:
-                0 15px 50px rgba(0,0,0,.55);
-        }
 
+body {
 
-        .logo {
-            width: 92px;
-            height: 92px;
+    margin: 0;
 
-            object-fit: contain;
+    min-height: 100vh;
 
-            border-radius: 50%;
-        }
+    color:
+        var(--text);
 
+    font-family:
+        "Inter",
+        sans-serif;
 
-        .business-name {
-            font-size: 29px;
-            line-height: 1.1;
+    background:
 
-            font-weight: 900;
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(28, 111, 255, .16),
+            transparent 32%
+        ),
 
-            letter-spacing: -1px;
-        }
+        radial-gradient(
+            circle at 100% 20%,
+            rgba(17, 78, 170, .10),
+            transparent 35%
+        ),
 
+        linear-gradient(
+            180deg,
+            #030814 0%,
+            #020611 55%,
+            #01040b 100%
+        );
 
-        .tagline {
-            margin-top: 8px;
+    padding:
+        18px 14px 40px;
 
-            color: #bdbdbd;
+    overflow-x:
+        hidden;
 
-            font-size: 14px;
+}
 
-            letter-spacing: .2px;
-        }
 
+/* =====================================================
+   BACKGROUND HEX PATTERN
+===================================================== */
 
-        .verified {
-            display: inline-flex;
+body::before {
 
-            align-items: center;
+    content:
+        "";
 
-            gap: 5px;
+    position:
+        fixed;
 
-            margin-top: 10px;
+    inset:
+        0;
 
-            padding: 6px 11px;
+    pointer-events:
+        none;
 
-            border-radius: 100px;
+    opacity:
+        .18;
 
-            background: rgba(255,255,255,.07);
+    background-image:
 
-            border: 1px solid rgba(255,255,255,.12);
+        linear-gradient(
+            30deg,
+            transparent 12%,
+            rgba(41, 123, 255, .3) 12.5%,
+            rgba(41, 123, 255, .3) 13%,
+            transparent 13.5%,
+            transparent 87%,
+            rgba(41, 123, 255, .3) 87.5%,
+            rgba(41, 123, 255, .3) 88%,
+            transparent 88.5%
+        ),
 
-            color: #d8d8d8;
+        linear-gradient(
+            150deg,
+            transparent 12%,
+            rgba(41, 123, 255, .3) 12.5%,
+            rgba(41, 123, 255, .3) 13%,
+            transparent 13.5%,
+            transparent 87%,
+            rgba(41, 123, 255, .3) 87.5%,
+            rgba(41, 123, 255, .3) 88%,
+            transparent 88.5%
+        );
 
-            font-size: 11px;
+    background-size:
+        150px 260px;
 
-            font-weight: 600;
-        }
+}
 
 
-        /* =====================================================
-           SAVE CONTACT
-        ===================================================== */
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
 
-        .save-contact {
-            width: 100%;
+.container {
 
-            border: none;
+    position:
+        relative;
 
-            border-radius: 15px;
+    z-index:
+        1;
 
-            padding: 17px 18px;
+    width:
+        100%;
 
-            background: #ffffff;
+    max-width:
+        760px;
 
-            color: #000000;
+    margin:
+        auto;
 
-            font-size: 16px;
+}
 
-            font-weight: 800;
 
-            cursor: pointer;
+/* =====================================================
+   HERO
+===================================================== */
 
-            box-shadow:
-                0 8px 25px rgba(0,0,0,.25);
+.hero {
 
-            transition:
-                transform .15s ease,
-                opacity .15s ease;
-        }
+    position:
+        relative;
 
+    text-align:
+        center;
 
-        .save-contact:active {
-            transform: scale(.98);
-        }
+    padding:
+        10px 10px 25px;
 
+    overflow:
+        hidden;
 
-        /* =====================================================
-           ACTION BUTTONS
-        ===================================================== */
+}
 
-        .actions {
-            display: grid;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+/* =====================================================
+   LOGO
+===================================================== */
 
-            gap: 10px;
+.logo-wrap {
 
-            margin-top: 12px;
-        }
+    width:
+        210px;
 
+    height:
+        210px;
 
-        .action {
-            min-height: 70px;
+    margin:
+        0 auto 20px;
 
-            display: flex;
+    border-radius:
+        50%;
 
-            flex-direction: column;
+    display:
+        flex;
 
-            align-items: center;
+    align-items:
+        center;
 
-            justify-content: center;
+    justify-content:
+        center;
 
-            gap: 6px;
+    position:
+        relative;
 
-            background:
-                rgba(255,255,255,.055);
+    background:
+        #ffffff;
 
-            border:
-                1px solid rgba(255,255,255,.10);
+    border:
+        3px solid
+        rgba(54, 139, 255, .95);
 
-            border-radius: 15px;
+    box-shadow:
 
-            transition:
-                background .2s ease,
-                transform .15s ease;
-        }
+        0 0 0 7px
+        rgba(33, 107, 255, .08),
 
+        0 0 35px
+        rgba(37, 140, 255, .30),
 
-        .action:active {
-            transform: scale(.98);
-        }
+        0 0 80px
+        rgba(37, 140, 255, .14);
 
+    overflow:
+        hidden;
 
-        .action-icon {
-            font-size: 21px;
-        }
+}
 
 
-        .action-label {
-            font-size: 12px;
+.logo-wrap img {
 
-            font-weight: 650;
+    width:
+        88%;
 
-            color: #e8e8e8;
-        }
+    height:
+        88%;
 
+    object-fit:
+        contain;
 
-        .whatsapp {
-            border-color:
-                rgba(37,211,102,.35);
-        }
+    display:
+        block;
 
+}
 
-        /* =====================================================
-           SECTIONS
-        ===================================================== */
 
-        .section {
-            margin-top: 14px;
+/* =====================================================
+   NAME
+===================================================== */
 
-            padding: 20px;
+.person-name {
 
-            background:
-                rgba(16,16,16,.90);
+    margin:
+        0;
 
-            border:
-                1px solid rgba(255,255,255,.09);
+    font-family:
+        "Montserrat",
+        sans-serif;
 
-            border-radius: 18px;
+    font-size:
+        clamp(
+            32px,
+            7vw,
+            58px
+        );
 
-            backdrop-filter: blur(10px);
-        }
+    font-weight:
+        800;
 
+    letter-spacing:
+        -.04em;
 
-        .section-title {
-            font-size: 17px;
+    line-height:
+        1.05;
 
-            font-weight: 800;
+    text-shadow:
+        0 4px 25px
+        rgba(0, 0, 0, .45);
 
-            margin-bottom: 15px;
-        }
+}
 
 
-        /* =====================================================
-           SERVICES
-        ===================================================== */
+.designation {
 
-        .services {
-            display: flex;
+    display:
+        flex;
 
-            flex-wrap: wrap;
+    align-items:
+        center;
 
-            gap: 8px;
-        }
+    justify-content:
+        center;
 
+    gap:
+        12px;
 
-        .service {
-            padding: 9px 12px;
+    margin-top:
+        12px;
 
-            border-radius: 100px;
+    color:
+        var(--blue-light);
 
-            background: #1b1b1b;
+    font-size:
+        clamp(
+            17px,
+            4vw,
+            25px
+        );
 
-            border:
-                1px solid #303030;
+    font-weight:
+        600;
 
-            color: #dedede;
+}
 
-            font-size: 12px;
 
-            line-height: 1;
-        }
+.designation::before,
+.designation::after {
 
+    content:
+        "";
 
-        /* =====================================================
-           LOCATIONS
-        ===================================================== */
+    width:
+        42px;
 
-        .location-card {
-            padding: 15px 0;
+    height:
+        2px;
 
-            border-bottom:
-                1px solid #262626;
-        }
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue)
+        );
 
+}
 
-        .location-card:first-child {
-            padding-top: 0;
-        }
 
+.designation::after {
 
-        .location-card:last-child {
-            padding-bottom: 0;
+    transform:
+        scaleX(-1);
 
-            border-bottom: none;
-        }
+}
 
 
-        .location-name {
-            font-size: 15px;
+.company-name {
 
-            font-weight: 800;
+    margin:
+        9px 0 0;
 
-            margin-bottom: 7px;
-        }
+    font-size:
+        clamp(
+            22px,
+            5vw,
+            32px
+        );
 
+    font-weight:
+        600;
 
-        .location-address {
-            color: #aaaaaa;
+    color:
+        #f5f7fb;
 
-            font-size: 13px;
+}
 
-            line-height: 1.55;
 
-            margin-bottom: 11px;
-        }
+.tagline {
 
+    margin:
+        8px 0 0;
 
-        .direction-button {
-            display: inline-flex;
+    color:
+        var(--text-soft);
 
-            align-items: center;
+    font-size:
+        clamp(
+            16px,
+            4vw,
+            22px
+        );
 
-            gap: 6px;
+}
 
-            padding: 9px 12px;
 
-            background: #1e1e1e;
+.tagline::before,
+.tagline::after {
 
-            border:
-                1px solid #363636;
+    content:
+        "";
 
-            border-radius: 10px;
+    display:
+        inline-block;
 
-            font-size: 12px;
+    width:
+        36px;
 
-            font-weight: 700;
-        }
+    height:
+        2px;
 
+    margin:
+        0 10px 5px;
 
-        .coming-soon {
-            display: inline-block;
+    background:
+        var(--blue);
 
-            padding: 7px 10px;
+}
 
-            border-radius: 9px;
 
-            background: #181818;
+/* =====================================================
+   SAVE CONTACT
+===================================================== */
 
-            color: #777777;
+.save-contact {
 
-            font-size: 11px;
-        }
+    width:
+        100%;
 
+    margin:
+        0 0 16px;
 
-        /* =====================================================
-           QR
-        ===================================================== */
+    padding:
+        18px 20px;
 
-        .qr-section {
-            text-align: center;
-        }
+    border-radius:
+        19px;
 
+    border:
+        1px solid
+        rgba(85, 161, 255, .85);
 
-        .qr-box {
-            width: 225px;
-            height: 225px;
+    background:
 
-            margin:
-                14px auto 16px;
+        linear-gradient(
+            135deg,
+            #154da8,
+            #2579e8 50%,
+            #123c8d
+        );
 
-            padding: 13px;
+    color:
+        white;
 
-            background: #ffffff;
+    display:
+        flex;
 
-            border-radius: 17px;
-        }
+    align-items:
+        center;
 
+    gap:
+        16px;
 
-        #qrcode {
-            width: 100%;
-            height: 100%;
-        }
+    cursor:
+        pointer;
 
+    text-align:
+        left;
 
-        #qrcode img,
-        #qrcode canvas {
-            width: 100% !important;
-            height: 100% !important;
-        }
+    box-shadow:
 
+        inset 0 1px 0
+        rgba(255, 255, 255, .20),
 
-        .qr-description {
-            color: #999999;
+        0 10px 35px
+        rgba(0, 92, 255, .20);
 
-            font-size: 12px;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 
-            line-height: 1.6;
-        }
+}
 
 
-        .nfc-note {
-            margin-top: 10px;
+.save-contact:hover {
 
-            color: #d2d2d2;
+    transform:
+        translateY(-2px);
 
-            font-size: 12px;
+    box-shadow:
 
-            font-weight: 600;
-        }
+        inset 0 1px 0
+        rgba(255, 255, 255, .20),
 
+        0 15px 45px
+        rgba(0, 92, 255, .35);
 
-        /* =====================================================
-           CONTACT INFORMATION
-        ===================================================== */
+}
 
-        .contact-row {
-            display: flex;
 
-            align-items: center;
+.save-icon {
 
-            gap: 12px;
+    width:
+        58px;
 
-            padding: 13px 0;
+    height:
+        58px;
 
-            border-bottom:
-                1px solid #252525;
-        }
+    flex-shrink:
+        0;
 
+    border-radius:
+        12px;
 
-        .contact-row:last-child {
-            border-bottom: none;
+    background:
+        white;
 
-            padding-bottom: 0;
-        }
+    color:
+        #1f5fc9;
 
+    display:
+        flex;
 
-        .contact-icon {
-            width: 40px;
-            height: 40px;
+    align-items:
+        center;
 
-            flex-shrink: 0;
+    justify-content:
+        center;
 
-            border-radius: 11px;
+    font-size:
+        30px;
 
-            background: #1c1c1c;
+}
 
-            display: flex;
 
-            align-items: center;
+.save-text strong {
 
-            justify-content: center;
+    display:
+        block;
 
-            font-size: 17px;
-        }
+    font-size:
+        22px;
 
+    letter-spacing:
+        .02em;
 
-        .contact-info {
-            min-width: 0;
-        }
+}
 
 
-        .contact-label {
-            color: #777777;
+.save-text span {
 
-            font-size: 10px;
+    display:
+        block;
 
-            margin-bottom: 3px;
-        }
+    margin-top:
+        4px;
 
+    color:
+        rgba(255, 255, 255, .84);
 
-        .contact-value {
-            color: #eeeeee;
+    font-size:
+        15px;
 
-            font-size: 14px;
+}
 
-            overflow-wrap: anywhere;
-        }
 
+.save-arrow {
 
-        /* =====================================================
-           SHARE
-        ===================================================== */
+    margin-left:
+        auto;
 
-        .share-button {
-            width: 100%;
+    font-size:
+        30px;
 
-            padding: 14px;
+}
 
-            background: transparent;
 
-            border:
-                1px solid #383838;
+/* =====================================================
+   QUICK ACTION GRID
+===================================================== */
 
-            border-radius: 13px;
+.actions {
 
-            color: #ffffff;
+    display:
+        grid;
 
-            font-size: 14px;
+    grid-template-columns:
+        repeat(3, 1fr);
 
-            font-weight: 750;
+    gap:
+        12px;
 
-            cursor: pointer;
-        }
+}
 
 
-        /* =====================================================
-           FOOTER
-        ===================================================== */
+.action {
 
-        .footer {
-            text-align: center;
+    min-height:
+        122px;
 
-            padding: 25px 10px 5px;
+    padding:
+        15px 12px;
 
-            color: #666666;
+    border-radius:
+        18px;
 
-            font-size: 11px;
+    border:
+        1px solid
+        var(--border);
 
-            line-height: 1.6;
-        }
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17, 27, 43, .92),
+            rgba(5, 11, 20, .94)
+        );
 
+    color:
+        white;
 
-        .footer strong {
-            color: #999999;
-        }
+    text-decoration:
+        none;
 
+    display:
+        flex;
 
-        /* =====================================================
-           TOAST
-        ===================================================== */
+    flex-direction:
+        column;
 
-        .toast {
-            position: fixed;
+    align-items:
+        flex-start;
 
-            left: 50%;
-            bottom: 25px;
+    justify-content:
+        center;
 
-            transform:
-                translate(-50%, 20px);
+    gap:
+        7px;
 
-            background: #ffffff;
+    cursor:
+        pointer;
 
-            color: #000000;
+    position:
+        relative;
 
-            padding: 12px 18px;
+    overflow:
+        hidden;
 
-            border-radius: 100px;
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
 
-            font-size: 13px;
+}
 
-            font-weight: 750;
 
-            opacity: 0;
+.action:hover {
 
-            pointer-events: none;
+    transform:
+        translateY(-3px);
 
-            transition:
-                opacity .25s ease,
-                transform .25s ease;
+    border-color:
+        rgba(63, 147, 255, .60);
 
-            z-index: 9999;
+}
 
-            white-space: nowrap;
-        }
 
+.action-icon {
 
-        .toast.show {
-            opacity: 1;
+    width:
+        52px;
 
-            transform:
-                translate(-50%, 0);
-        }
+    height:
+        52px;
 
+    border-radius:
+        50%;
 
-        /* =====================================================
-           SMALL DEVICES
-        ===================================================== */
+    display:
+        flex;
 
-        @media (max-width: 360px) {
+    align-items:
+        center;
 
-            body {
-                padding-left: 12px;
-                padding-right: 12px;
-            }
+    justify-content:
+        center;
 
-            .business-name {
-                font-size: 26px;
-            }
+    font-size:
+        25px;
 
-            .qr-box {
-                width: 195px;
-                height: 195px;
-            }
+    background:
 
-        }
+        radial-gradient(
+            circle at 30% 25%,
+            #397fff,
+            #0d3f9d 65%,
+            #061b48
+        );
 
-    </style>
+    box-shadow:
+        0 8px 25px
+        rgba(0, 81, 255, .25);
+
+}
+
+
+.action-label {
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .05em;
+
+}
+
+
+.action-sub {
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.3;
+
+}
+
+
+.action.whatsapp .action-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #34d267,
+            #117a36
+        );
+
+}
+
+
+.action.instagram .action-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffcc48,
+            #e84074,
+            #5a3fc9
+        );
+
+}
+
+
+.action.share .action-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7448e8,
+            #245fd8
+        );
+
+}
+
+
+.action-arrow {
+
+    position:
+        absolute;
+
+    right:
+        12px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        var(--blue-light);
+
+    font-size:
+        21px;
+
+}
+
+
+/* =====================================================
+   CONTENT GRID
+===================================================== */
+
+.content-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1.15fr;
+
+    gap:
+        14px;
+
+    margin-top:
+        16px;
+
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.section {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(9, 18, 32, .96),
+            rgba(4, 10, 18, .98)
+        );
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:
+        22px;
+
+    padding:
+        22px;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+}
+
+
+.section::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        12%;
+
+    width:
+        36%;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue),
+            transparent
+        );
+
+}
+
+
+.section-title {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    margin:
+        0 0 18px;
+
+    font-size:
+        20px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .04em;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.section-title::before,
+.section-title::after {
+
+    content:
+        "";
+
+    width:
+        38px;
+
+    height:
+        2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue)
+        );
+
+}
+
+
+.section-title::after {
+
+    transform:
+        scaleX(-1);
+
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.service-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        8px;
+
+}
+
+
+.service-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    padding:
+        10px 8px;
+
+    border-radius:
+        12px;
+
+    transition:
+        background .2s ease;
+
+}
+
+
+.service-item:hover {
+
+    background:
+        rgba(28, 104, 255, .08);
+
+}
+
+
+.service-icon {
+
+    width:
+        35px;
+
+    text-align:
+        center;
+
+    color:
+        var(--blue-light);
+
+    font-size:
+        21px;
+
+}
+
+
+.service-text strong {
+
+    display:
+        block;
+
+    font-size:
+        14px;
+
+}
+
+
+.service-text span {
+
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   LOCATIONS
+===================================================== */
+
+.locations {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+.location {
+
+    display:
+        flex;
+
+    gap:
+        13px;
+
+    padding:
+        15px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+}
+
+
+.location:last-child {
+
+    border-bottom:
+        none;
+
+    padding-bottom:
+        0;
+
+}
+
+
+.location-icon {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(45, 134, 255, .7);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        var(--blue-light);
+
+    background:
+        rgba(9, 46, 105, .35);
+
+    font-size:
+        22px;
+
+}
+
+
+.location-content {
+
+    min-width:
+        0;
+
+    flex:
+        1;
+
+}
+
+
+.location-content strong {
+
+    display:
+        block;
+
+    font-size:
+        15px;
+
+}
+
+
+.location-content p {
+
+    margin:
+        4px 0 8px;
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.45;
+
+}
+
+
+.map-link {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    color:
+        var(--blue-light);
+
+    text-decoration:
+        none;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .04em;
+
+}
+
+
+.soon {
+
+    display:
+        inline-block;
+
+    padding:
+        6px 11px;
+
+    border:
+        1px solid
+        rgba(37, 140, 255, .75);
+
+    border-radius:
+        8px;
+
+    color:
+        var(--blue-light);
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =====================================================
+   QR SECTION
+===================================================== */
+
+.qr-section {
+
+    margin-top:
+        16px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        220px 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        24px;
+
+}
+
+
+.qr-section::before {
+
+    display:
+        none;
+
+}
+
+
+.qr-box {
+
+    width:
+        205px;
+
+    height:
+        205px;
+
+    margin:
+        auto;
+
+    padding:
+        12px;
+
+    border-radius:
+        15px;
+
+    background:
+        white;
+
+    position:
+        relative;
+
+    box-shadow:
+        0 0 25px
+        rgba(37, 140, 255, .30);
+
+}
+
+
+#qrcode {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+}
+
+
+#qrcode img,
+#qrcode canvas {
+
+    width:
+        100% !important;
+
+    height:
+        100% !important;
+
+}
+
+
+.qr-content h2 {
+
+    margin:
+        0 0 10px;
+
+    font-size:
+        clamp(
+            22px,
+            5vw,
+            30px
+        );
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        .03em;
+
+}
+
+
+.qr-content h2 span {
+
+    color:
+        var(--blue-light);
+
+}
+
+
+.qr-content p {
+
+    margin:
+        0;
+
+    color:
+        var(--text-soft);
+
+    line-height:
+        1.55;
+
+    font-size:
+        15px;
+
+}
+
+
+.qr-points {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        18px;
+
+    margin-top:
+        18px;
+
+    color:
+        var(--text-muted);
+
+    font-size:
+        13px;
+
+}
+
+
+/* =====================================================
+   CONTACT SECTION
+===================================================== */
+
+.contact-section {
+
+    margin-top:
+        16px;
+
+}
+
+
+.contact-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    padding:
+        14px 0;
+
+    color:
+        white;
+
+    text-decoration:
+        none;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, .08);
+
+}
+
+
+.contact-row:last-child {
+
+    border-bottom:
+        none;
+
+}
+
+
+.contact-icon {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    flex-shrink:
+        0;
+
+    border-radius:
+        13px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    background:
+        rgba(24, 80, 175, .25);
+
+    border:
+        1px solid
+        rgba(47, 133, 255, .25);
+
+    font-size:
+        20px;
+
+}
+
+
+.contact-info strong {
+
+    display:
+        block;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        .05em;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.contact-info span {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    font-size:
+        15px;
+
+    color:
+        var(--text);
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.footer {
+
+    text-align:
+        center;
+
+    padding:
+        30px 10px 5px;
+
+    color:
+        var(--text-muted);
+
+}
+
+
+.footer-line {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.footer-line::before,
+.footer-line::after {
+
+    content:
+        "";
+
+    width:
+        65px;
+
+    height:
+        1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue)
+        );
+
+}
+
+
+.footer-line::after {
+
+    transform:
+        scaleX(-1);
+
+}
+
+
+.footer-tagline {
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        25px;
+
+    font-style:
+        italic;
+
+    color:
+        #dce7f8;
+
+}
+
+
+.footer small {
+
+    display:
+        block;
+
+    margin-top:
+        16px;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        25px;
+
+    transform:
+        translate(-50%, 30px);
+
+    padding:
+        13px 20px;
+
+    border-radius:
+        100px;
+
+    background:
+        white;
+
+    color:
+        #07101d;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+
+    z-index:
+        9999;
+
+    white-space:
+        nowrap;
+
+    box-shadow:
+        0 12px 40px
+        rgba(0, 0, 0, .45);
+
+}
+
+
+.toast.show {
+
+    opacity:
+        1;
+
+    transform:
+        translate(-50%, 0);
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media
+(max-width: 650px) {
+
+    .content-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .qr-section {
+
+        grid-template-columns:
+            1fr;
+
+        text-align:
+            center;
+
+    }
+
+
+    .qr-points {
+
+        justify-content:
+            center;
+
+    }
+
+}
+
+
+@media
+(max-width: 440px) {
+
+    body {
+
+        padding:
+            12px 10px 30px;
+
+    }
+
+
+    .logo-wrap {
+
+        width:
+            175px;
+
+        height:
+            175px;
+
+    }
+
+
+    .actions {
+
+        gap:
+            9px;
+
+    }
+
+
+    .action {
+
+        min-height:
+            115px;
+
+        padding:
+            13px 9px;
+
+    }
+
+
+    .action-icon {
+
+        width:
+            46px;
+
+        height:
+            46px;
+
+        font-size:
+            22px;
+
+    }
+
+
+    .action-label {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .action-sub {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .section {
+
+        padding:
+            18px;
+
+    }
+
+
+    .save-text strong {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .save-text span {
+
+        font-size:
+            12px;
+
+    }
+
+}
+
+
+@media
+(max-width: 350px) {
+
+    .actions {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -679,208 +1873,274 @@
 <div class="container">
 
 
-    <!-- =====================================================
-         PROFILE
-    ====================================================== -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    <header class="profile">
+<header class="hero">
 
-        <div class="logo-container">
+    <div class="logo-wrap">
 
-            <!--
-                YOUR LOGO
-
-                If logo.png is in the ROOT of your GitHub
-                repository, keep:
-
-                    /logo.png
-
-                If logo.png is inside /card/, change to:
-
-                    logo.png
-            -->
-
-            <img
-                src="/logo.png"
-                alt="Detailing Experts Logo"
-                class="logo"
-            >
-
-        </div>
-
-
-        <h1 class="business-name">
-            DETAILING EXPERTS
-        </h1>
-
-
-        <p class="tagline">
-            Premium Car &amp; Bike Care
-        </p>
-
-
-        <div class="verified">
-            ✓ Official Digital Contact Card
-        </div>
-
-    </header>
-
-
-
-    <!-- =====================================================
-         SAVE CONTACT
-    ====================================================== -->
-
-    <button
-        class="save-contact"
-        onclick="saveContact()"
-    >
-
-        👤 Save Contact
-
-    </button>
-
-
-
-    <!-- =====================================================
-         QUICK ACTIONS
-    ====================================================== -->
-
-    <div class="actions">
-
-
-        <!-- CALL -->
-
-        <a
-            class="action"
-            href="tel:+919990853136"
-            onclick="trackEvent('call')"
+        <img
+            src="logo.png"
+            alt="Detailing Experts Logo"
         >
-
-            <span class="action-icon">
-                📞
-            </span>
-
-            <span class="action-label">
-                Call
-            </span>
-
-        </a>
-
-
-
-        <!-- WHATSAPP -->
-
-        <a
-            class="action whatsapp"
-            href="https://wa.me/919990853136?text=Hi%20Detailing%20Experts%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-            target="_blank"
-            rel="noopener"
-            onclick="trackEvent('whatsapp')"
-        >
-
-            <span class="action-icon">
-                💬
-            </span>
-
-            <span class="action-label">
-                WhatsApp
-            </span>
-
-        </a>
-
-
-
-        <!-- WEBSITE -->
-
-        <a
-            class="action"
-            href="https://detailingexperts.net/"
-            target="_blank"
-            rel="noopener"
-            onclick="trackEvent('website')"
-        >
-
-            <span class="action-icon">
-                🌐
-            </span>
-
-            <span class="action-label">
-                Website
-            </span>
-
-        </a>
-
-
-
-        <!-- INSTAGRAM -->
-
-        <a
-            class="action"
-            href="https://www.instagram.com/detailingexpertsofficial/"
-            target="_blank"
-            rel="noopener"
-            onclick="trackEvent('instagram')"
-        >
-
-            <span class="action-icon">
-                📸
-            </span>
-
-            <span class="action-label">
-                Instagram
-            </span>
-
-        </a>
-
-
-
-        <!-- GOOGLE -->
-
-        <a
-            class="action"
-            href="https://www.google.com/search?q=Detailing+Experts+Vadodara"
-            target="_blank"
-            rel="noopener"
-            onclick="trackEvent('google')"
-        >
-
-            <span class="action-icon">
-                ⭐
-            </span>
-
-            <span class="action-label">
-                Google
-            </span>
-
-        </a>
-
-
-
-        <!-- SHARE -->
-
-        <button
-            class="action"
-            onclick="shareCard()"
-        >
-
-            <span class="action-icon">
-                ↗
-            </span>
-
-            <span class="action-label">
-                Share
-            </span>
-
-        </button>
 
     </div>
 
 
+    <h1 class="person-name">
 
-    <!-- =====================================================
-         SERVICES
-    ====================================================== -->
+        Akash Chaudhary
+
+    </h1>
+
+
+    <div class="designation">
+
+        Founder &amp; Detailing Expert
+
+    </div>
+
+
+    <div class="company-name">
+
+        Detailing Experts
+
+    </div>
+
+
+    <p class="tagline">
+
+        Premium Car &amp; Bike Care
+
+    </p>
+
+</header>
+
+
+
+<!-- =====================================================
+     SAVE CONTACT
+===================================================== -->
+
+<button
+    class="save-contact"
+    onclick="saveContact()"
+>
+
+    <div class="save-icon">
+        👤
+    </div>
+
+
+    <div class="save-text">
+
+        <strong>
+            SAVE CONTACT
+        </strong>
+
+        <span>
+            Add to your phone contacts in one tap
+        </span>
+
+    </div>
+
+
+    <div class="save-arrow">
+        ↓
+    </div>
+
+</button>
+
+
+
+<!-- =====================================================
+     QUICK ACTIONS
+===================================================== -->
+
+<div class="actions">
+
+
+    <!-- CALL -->
+
+    <a
+        class="action"
+        href="tel:+919990853136"
+    >
+
+        <div class="action-icon">
+            ☎
+        </div>
+
+        <div class="action-label">
+            CALL
+        </div>
+
+        <div class="action-sub">
+            9990853136
+        </div>
+
+        <div class="action-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- WHATSAPP -->
+
+    <a
+        class="action whatsapp"
+        href="https://wa.me/919990853136?text=Hi%20Akash%2C%20I%20would%20like%20to%20know%20more%20about%20Detailing%20Experts."
+        target="_blank"
+        rel="noopener"
+    >
+
+        <div class="action-icon">
+            ☏
+        </div>
+
+        <div class="action-label">
+            WHATSAPP
+        </div>
+
+        <div class="action-sub">
+            Chat with us
+        </div>
+
+        <div class="action-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- WEBSITE -->
+
+    <a
+        class="action"
+        href="https://detailingexperts.net/"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <div class="action-icon">
+            ◎
+        </div>
+
+        <div class="action-label">
+            WEBSITE
+        </div>
+
+        <div class="action-sub">
+            detailingexperts.net
+        </div>
+
+        <div class="action-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- INSTAGRAM -->
+
+    <a
+        class="action instagram"
+        href="https://www.instagram.com/detailingexpertsofficial/"
+        target="_blank"
+        rel="noopener"
+    >
+
+        <div class="action-icon">
+            ◉
+        </div>
+
+        <div class="action-label">
+            INSTAGRAM
+        </div>
+
+        <div class="action-sub">
+            @detailingexpertsofficial
+        </div>
+
+        <div class="action-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- LOCATIONS -->
+
+    <a
+        class="action"
+        href="#locations"
+    >
+
+        <div class="action-icon">
+            📍
+        </div>
+
+        <div class="action-label">
+            LOCATIONS
+        </div>
+
+        <div class="action-sub">
+            3 Branches
+        </div>
+
+        <div class="action-arrow">
+            ›
+        </div>
+
+    </a>
+
+
+
+    <!-- SHARE -->
+
+    <button
+        class="action share"
+        onclick="shareCard()"
+    >
+
+        <div class="action-icon">
+            ↗
+        </div>
+
+        <div class="action-label">
+            SHARE CARD
+        </div>
+
+        <div class="action-sub">
+            Share with anyone
+        </div>
+
+        <div class="action-arrow">
+            ›
+        </div>
+
+    </button>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     SERVICES + LOCATIONS
+===================================================== -->
+
+<div class="content-grid">
+
+
+    <!-- SERVICES -->
 
     <section class="section">
 
@@ -889,35 +2149,139 @@
         </h2>
 
 
-        <div class="services">
+        <div class="service-list">
 
-            <span class="service">
-                🚘 Car Detailing
-            </span>
 
-            <span class="service">
-                ✨ Ceramic Coating
-            </span>
+            <div class="service-item">
 
-            <span class="service">
-                🫧 Premium Foam Wash
-            </span>
+                <div class="service-icon">
+                    ◉
+                </div>
 
-            <span class="service">
-                🏍️ Bike Detailing
-            </span>
+                <div class="service-text">
 
-            <span class="service">
-                🧴 Car Care Products
-            </span>
+                    <strong>
+                        Graphene Coating
+                    </strong>
 
-            <span class="service">
-                🧽 Microfiber Cloths
-            </span>
+                    <span>
+                        Advanced vehicle protection
+                    </span>
 
-            <span class="service">
-                🪥 Cleaning Brushes
-            </span>
+                </div>
+
+            </div>
+
+
+
+            <div class="service-item">
+
+                <div class="service-icon">
+                    ✦
+                </div>
+
+                <div class="service-text">
+
+                    <strong>
+                        Ceramic Coating
+                    </strong>
+
+                    <span>
+                        Long-lasting shine
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="service-item">
+
+                <div class="service-icon">
+                    ✦
+                </div>
+
+                <div class="service-text">
+
+                    <strong>
+                        Premium Foam Wash
+                    </strong>
+
+                    <span>
+                        Professional cleaning
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="service-item">
+
+                <div class="service-icon">
+                    🏍
+                </div>
+
+                <div class="service-text">
+
+                    <strong>
+                        Bike Detailing
+                    </strong>
+
+                    <span>
+                        Premium bike care
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="service-item">
+
+                <div class="service-icon">
+                    🧴
+                </div>
+
+                <div class="service-text">
+
+                    <strong>
+                        Car Care Products
+                    </strong>
+
+                    <span>
+                        Professional-grade products
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="service-item">
+
+                <div class="service-icon">
+                    🧽
+                </div>
+
+                <div class="service-text">
+
+                    <strong>
+                        Microfiber &amp; Brushes
+                    </strong>
+
+                    <span>
+                        Premium cleaning accessories
+                    </span>
+
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -925,310 +2289,336 @@
 
 
 
-    <!-- =====================================================
-         LOCATIONS
-    ====================================================== -->
+    <!-- LOCATIONS -->
 
-    <section class="section">
+    <section
+        class="section"
+        id="locations"
+    >
 
         <h2 class="section-title">
             Our Locations
         </h2>
 
 
+        <div class="locations">
 
-        <!-- VADODARA -->
 
-        <div class="location-card">
+            <!-- VADODARA -->
 
-            <div class="location-name">
-                📍 Vadodara
+            <div class="location">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+
+                <div class="location-content">
+
+                    <strong>
+                        Vadodara, Gujarat
+                    </strong>
+
+                    <p>
+                        Basement 2, Eva The Mall,
+                        Manjalpur, Vadodara,
+                        Gujarat
+                    </p>
+
+                    <a
+                        class="map-link"
+                        href="https://maps.app.goo.gl/22zXeTdqh125BdXY6"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        OPEN IN MAPS ↗
+
+                    </a>
+
+                </div>
+
             </div>
 
 
-            <div class="location-address">
 
-                Basement 2, Eva The Mall,
-                Manjalpur, Vadodara,
-                Gujarat
+            <!-- GODHRA -->
+
+            <div class="location">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+
+                <div class="location-content">
+
+                    <strong>
+                        Godhra, Gujarat
+                    </strong>
+
+                    <p>
+                        1, Opp. Hotel Luxura,
+                        Dahod Road, Godhra,
+                        Gujarat
+                    </p>
+
+                    <a
+                        class="map-link"
+                        href="https://maps.app.goo.gl/qoqqnk1Wdogto5hE9"
+                        target="_blank"
+                        rel="noopener"
+                    >
+
+                        OPEN IN MAPS ↗
+
+                    </a>
+
+                </div>
 
             </div>
 
 
-            <a
-                class="direction-button"
-                href="https://maps.app.goo.gl/22zXeTdqh125BdXY6"
-                target="_blank"
-                rel="noopener"
-                onclick="trackEvent('maps_vadodara')"
-            >
 
-                🧭 Get Directions
+            <!-- JAIPUR -->
 
-            </a>
+            <div class="location">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+
+                <div class="location-content">
+
+                    <strong>
+                        Jaipur, Rajasthan
+                    </strong>
+
+                    <p>
+                        Plot No. 87, Sikar Rd,
+                        Murlipura, Jaipur,
+                        Rajasthan 302039
+                    </p>
+
+                    <span class="soon">
+                        DIRECTIONS SOON
+                    </span>
+
+                </div>
+
+            </div>
+
 
         </div>
 
+    </section>
 
 
-        <!-- GODHRA -->
-
-        <div class="location-card">
-
-            <div class="location-name">
-                📍 Godhra
-            </div>
-
-
-            <div class="location-address">
-
-                1, Opp. Hotel Luxura,
-                Dahod Road, Godhra,
-                Gujarat
-
-            </div>
-
-
-            <a
-                class="direction-button"
-                href="https://maps.app.goo.gl/qoqqnk1Wdogto5hE9"
-                target="_blank"
-                rel="noopener"
-                onclick="trackEvent('maps_godhra')"
-            >
-
-                🧭 Get Directions
-
-            </a>
-
-        </div>
+</div>
 
 
 
-        <!-- JAIPUR -->
+<!-- =====================================================
+     QR CODE
+===================================================== -->
 
-        <div class="location-card">
-
-            <div class="location-name">
-                📍 Jaipur
-            </div>
+<section class="section qr-section">
 
 
-            <div class="location-address">
+    <div class="qr-box">
 
-                Plot No. 87, Sikar Rd,
-                Murlipura, Jaipur,
-                Rajasthan 302039
+        <div id="qrcode"></div>
 
-            </div>
+    </div>
 
 
-            <span class="coming-soon">
+    <div class="qr-content">
 
-                Directions link coming soon
+        <h2>
+            Scan to <span>Connect</span>
+        </h2>
 
+        <p>
+
+            Scan this QR code to save our contact
+            or connect with us instantly.
+
+        </p>
+
+
+        <div class="qr-points">
+
+            <span>
+                ✓ 100% Secure
+            </span>
+
+            <span>
+                📱 No App Required
             </span>
 
         </div>
 
-    </section>
+    </div>
+
+
+</section>
 
 
 
-    <!-- =====================================================
-         QR CODE
-    ====================================================== -->
+<!-- =====================================================
+     CONTACT DETAILS
+===================================================== -->
 
-    <section class="section qr-section">
+<section class="section contact-section">
 
-        <h2 class="section-title">
-            Scan to Connect
-        </h2>
+    <h2 class="section-title">
+        Contact Details
+    </h2>
 
 
-        <div class="qr-box">
+    <a
+        class="contact-row"
+        href="tel:+919990853136"
+    >
 
-            <div id="qrcode"></div>
+        <div class="contact-icon">
+            ☎
+        </div>
+
+        <div class="contact-info">
+
+            <strong>
+                PHONE
+            </strong>
+
+            <span>
+                +91 9990853136
+            </span>
 
         </div>
 
-
-        <p class="qr-description">
-
-            Scan this QR code to open
-            the official Detailing Experts
-            digital contact card.
-
-        </p>
-
-
-        <p class="nfc-note">
-
-            📱 NFC compatible — tap your phone
-            on an NFC card to open this page.
-
-        </p>
-
-    </section>
+    </a>
 
 
 
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
+    <a
+        class="contact-row"
+        href="https://wa.me/919990853136"
+        target="_blank"
+        rel="noopener"
+    >
 
-    <section class="section">
+        <div class="contact-icon">
+            ☏
+        </div>
 
-        <h2 class="section-title">
-            Contact Details
-        </h2>
+        <div class="contact-info">
 
+            <strong>
+                WHATSAPP
+            </strong>
 
+            <span>
+                +91 9990853136
+            </span>
 
-        <!-- PHONE -->
+        </div>
 
-        <a
-            class="contact-row"
-            href="tel:+919990853136"
-            onclick="trackEvent('contact_phone')"
-        >
-
-            <div class="contact-icon">
-                📞
-            </div>
-
-
-            <div class="contact-info">
-
-                <div class="contact-label">
-                    PHONE
-                </div>
-
-                <div class="contact-value">
-                    +91 9990853136
-                </div>
-
-            </div>
-
-        </a>
+    </a>
 
 
 
-        <!-- WHATSAPP -->
+    <a
+        class="contact-row"
+        href="https://detailingexperts.net/"
+        target="_blank"
+        rel="noopener"
+    >
 
-        <a
-            class="contact-row"
-            href="https://wa.me/919990853136"
-            target="_blank"
-            rel="noopener"
-            onclick="trackEvent('contact_whatsapp')"
-        >
+        <div class="contact-icon">
+            ◎
+        </div>
 
-            <div class="contact-icon">
-                💬
-            </div>
+        <div class="contact-info">
 
+            <strong>
+                WEBSITE
+            </strong>
 
-            <div class="contact-info">
+            <span>
+                detailingexperts.net
+            </span>
 
-                <div class="contact-label">
-                    WHATSAPP
-                </div>
+        </div>
 
-                <div class="contact-value">
-                    +91 9990853136
-                </div>
-
-            </div>
-
-        </a>
+    </a>
 
 
 
-        <!-- WEBSITE -->
+    <a
+        class="contact-row"
+        href="https://www.instagram.com/detailingexpertsofficial/"
+        target="_blank"
+        rel="noopener"
+    >
 
-        <a
-            class="contact-row"
-            href="https://detailingexperts.net/"
-            target="_blank"
-            rel="noopener"
-            onclick="trackEvent('contact_website')"
-        >
+        <div class="contact-icon">
+            ◉
+        </div>
 
-            <div class="contact-icon">
-                🌐
-            </div>
+        <div class="contact-info">
 
+            <strong>
+                INSTAGRAM
+            </strong>
 
-            <div class="contact-info">
+            <span>
+                @detailingexpertsofficial
+            </span>
 
-                <div class="contact-label">
-                    WEBSITE
-                </div>
+        </div>
 
-                <div class="contact-value">
-                    detailingexperts.net
-                </div>
-
-            </div>
-
-        </a>
+    </a>
 
 
-
-        <!-- INSTAGRAM -->
-
-        <a
-            class="contact-row"
-            href="https://www.instagram.com/detailingexpertsofficial/"
-            target="_blank"
-            rel="noopener"
-            onclick="trackEvent('contact_instagram')"
-        >
-
-            <div class="contact-icon">
-                📸
-            </div>
-
-
-            <div class="contact-info">
-
-                <div class="contact-label">
-                    INSTAGRAM
-                </div>
-
-                <div class="contact-value">
-                    @detailingexpertsofficial
-                </div>
-
-            </div>
-
-        </a>
-
-    </section>
+</section>
 
 
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-    <footer class="footer">
+<footer class="footer">
 
-        <strong>
-            DETAILING EXPERTS
-        </strong>
+    <div class="footer-line">
+
+        <div class="footer-tagline">
+            Drive Clean, Drive Proud
+        </div>
+
+        <span style="font-size:25px;">
+            ♥
+        </span>
+
+    </div>
+
+
+    <small>
+
+        ©
+        <span id="year"></span>
+
+        Detailing Experts
 
         <br>
 
         Premium Car &amp; Bike Care
 
-        <br><br>
+    </small>
 
-        © <span id="year"></span>
-        Detailing Experts
-
-    </footer>
+</footer>
 
 
 </div>
@@ -1237,383 +2627,334 @@
 
 <!-- =====================================================
      TOAST
-====================================================== -->
+===================================================== -->
 
 <div
-    id="toast"
     class="toast"
+    id="toast"
 >
-    Contact card created
+    Contact card ready
 </div>
 
 
 
 <!-- =====================================================
-     QR CODE LIBRARY
-====================================================== -->
-
-<script
-    src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
-></script>
-
-
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
-    /* =====================================================
-       CONFIGURATION
-    ===================================================== */
 
-    const CONFIG = {
+/* =====================================================
+   CONFIGURATION
+===================================================== */
 
-        businessName:
-            "Detailing Experts",
+const CONFIG = {
 
-        phone:
-            "+919990853136",
+    name:
+        "Akash Chaudhary",
 
-        displayPhone:
-            "+91 9990853136",
+    designation:
+        "Founder & Detailing Expert",
 
-        website:
-            "https://detailingexperts.net/",
+    businessName:
+        "Detailing Experts",
 
-        cardUrl:
-            "https://detailingexperts.net/card",
+    phone:
+        "+919990853136",
 
-        instagram:
-            "https://www.instagram.com/detailingexpertsofficial/",
+    displayPhone:
+        "+91 9990853136",
 
-        address:
-            "Vadodara, Gujarat, India"
+    website:
+        "https://detailingexperts.net/",
+
+    cardUrl:
+        "https://detailingexperts.net/card",
+
+    instagram:
+        "https://www.instagram.com/detailingexpertsofficial/",
+
+    vadodara:
+        "Basement 2, Eva The Mall, Manjalpur, Vadodara, Gujarat",
+
+    godhra:
+        "1, Opp. Hotel Luxura, Dahod Road, Godhra, Gujarat",
+
+    jaipur:
+        "Plot No. 87, Sikar Rd, Murlipura, Jaipur, Rajasthan 302039"
+
+};
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+document
+    .getElementById("year")
+    .textContent =
+    new Date().getFullYear();
+
+
+/* =====================================================
+   QR CODE
+===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        if (
+            typeof QRCode !== "undefined"
+        ) {
+
+            new QRCode(
+                document.getElementById("qrcode"),
+                {
+
+                    text:
+                        CONFIG.cardUrl,
+
+                    width:
+                        220,
+
+                    height:
+                        220,
+
+                    correctLevel:
+                        QRCode.CorrectLevel.H
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SAVE CONTACT
+===================================================== */
+
+function saveContact() {
+
+    const vcard = [
+
+        "BEGIN:VCARD",
+
+        "VERSION:3.0",
+
+        "FN:" + CONFIG.name,
+
+        "N:Chaudhary;Akash;;;",
+
+        "ORG:" + CONFIG.businessName,
+
+        "TITLE:" + CONFIG.designation,
+
+        "TEL;TYPE=CELL:" + CONFIG.phone,
+
+        "URL:" + CONFIG.website,
+
+        "ADR;TYPE=WORK:;;Basement 2, Eva The Mall, Manjalpur;Vadodara;Gujarat;;India",
+
+        "NOTE:Premium Car & Bike Care. " +
+        "Locations: " +
+        "Vadodara - " + CONFIG.vadodara + ". " +
+        "Godhra - " + CONFIG.godhra + ". " +
+        "Jaipur - " + CONFIG.jaipur,
+
+        "END:VCARD"
+
+    ].join("\r\n") + "\r\n";
+
+
+    const blob = new Blob(
+        [vcard],
+        {
+            type:
+                "text/vcard;charset=utf-8"
+        }
+    );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        "Akash-Chaudhary-Detailing-Experts.vcf";
+
+
+    link.style.display =
+        "none";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+        link
+    );
+
+
+    setTimeout(
+        function () {
+
+            URL.revokeObjectURL(
+                url
+            );
+
+        },
+        10000
+    );
+
+
+    const isAndroid =
+        /Android/i.test(
+            navigator.userAgent
+        );
+
+
+    if (isAndroid) {
+
+        showToast(
+            "Contact downloaded — tap the file to save"
+        );
+
+    } else {
+
+        showToast(
+            "Contact card ready"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   SHARE CARD
+===================================================== */
+
+async function shareCard() {
+
+    const shareData = {
+
+        title:
+            "Akash Chaudhary | Detailing Experts",
+
+        text:
+            "Connect with Akash Chaudhary - Founder & Detailing Expert at Detailing Experts.",
+
+        url:
+            CONFIG.cardUrl
 
     };
 
 
+    if (
+        navigator.share
+    ) {
 
-    /* =====================================================
-       YEAR
-    ===================================================== */
+        try {
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
+            await navigator.share(
+                shareData
+            );
 
+            return;
 
+        }
 
-    /* =====================================================
-       QR CODE
-    ===================================================== */
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
-
-            const qr =
-                document.getElementById("qrcode");
-
+        catch (error) {
 
             if (
-                typeof QRCode !== "undefined"
+                error.name ===
+                "AbortError"
             ) {
-
-                new QRCode(
-                    qr,
-                    {
-
-                        text:
-                            CONFIG.cardUrl,
-
-                        width:
-                            195,
-
-                        height:
-                            195,
-
-                        correctLevel:
-                            QRCode.CorrectLevel.H
-
-                    }
-                );
-
-            }
-
-        }
-    );
-
-
-
-    /* =====================================================
-       SAVE CONTACT
-    ===================================================== */
-
-    function saveContact() {
-
-        trackEvent("save_contact");
-        
-        /*
-        * Android-compatible vCard
-        *
-        * Keep this simple.
-        * Android Contacts can be very strict about
-        * vCard formatting.
-        */
-
-        const vcard = [
-            "BEGIN:VCARD",
-            "VERSION:3.0",
-            "FN:Detailing Experts",
-            "N:Detailing Experts;;;;",
-            "ORG:Detailing Experts",
-            "TEL;TYPE=CELL:+919990853136",
-            "URL:https://detailingexperts.net/",
-            "ADR;TYPE=WORK:;;Basement 2, Eva The Mall, Manjalpur;Vadodara;Gujarat;;India",
-            "NOTE:Premium Car & Bike Care. Vadodara: Basement 2, Eva The Mall, Manjalpur, Vadodara, Gujarat. Godhra: 1, Opp. Hotel Luxura, Dahod Road, Godhra, Gujarat. Jaipur: Plot No. 87, Sikar Rd, Murlipura, Jaipur, Rajasthan 302039.",
-            "END:VCARD"
-        ].join("\r\n") + "\r\n";
-
-        /*
-        * Create VCF file
-        */
-
-        const blob = new Blob(
-            [vcard],
-            {
-                type: "text/vcard"
-            }
-        );
-
-        const url =
-            URL.createObjectURL(blob);
-
-        /*
-        * Create download/open link
-        */
-
-        const link =
-            document.createElement("a");
-
-        link.href = url;
-
-        link.download =
-            "Detailing-Experts.vcf";
-
-        link.style.display =
-            "none";
-
-        document.body.appendChild(link);
-
-        link.click();
-
-        document.body.removeChild(link);
-
-        /*
-        * Clean up
-        */
-
-        setTimeout(function () {
-
-            URL.revokeObjectURL(url);
-
-        }, 10000);
-
-        /*
-        * Android instruction
-        */
-
-        const isAndroid =
-            /Android/i.test(
-                navigator.userAgent
-            );
-
-        if (isAndroid) {
-
-            showToast(
-                "Contact file downloaded — tap it to save"
-            );
-
-        } else {
-
-            showToast(
-                "Contact card ready"
-            );
-
-        }
-
-    }
-
-
-    /* =====================================================
-       SHARE CARD
-    ===================================================== */
-
-    async function shareCard() {
-
-        trackEvent(
-            "share"
-        );
-
-
-        const shareData = {
-
-            title:
-                "Detailing Experts",
-
-            text:
-                "Connect with Detailing Experts - Premium Car & Bike Care",
-
-            url:
-                CONFIG.cardUrl
-
-        };
-
-
-        if (
-            navigator.share &&
-            (
-                !navigator.canShare ||
-                navigator.canShare(
-                    shareData
-                )
-            )
-        ) {
-
-            try {
-
-                await navigator.share(
-                    shareData
-                );
 
                 return;
 
-            } catch (error) {
-
-                if (
-                    error.name ===
-                    "AbortError"
-                ) {
-
-                    return;
-
-                }
-
             }
 
         }
 
-
-        /* FALLBACK */
-
-        try {
-
-            await navigator.clipboard.writeText(
-                CONFIG.cardUrl
-            );
-
-
-            showToast(
-                "Card link copied"
-            );
-
-        } catch (error) {
-
-            window.prompt(
-                "Copy this link:",
-                CONFIG.cardUrl
-            );
-
-        }
-
     }
 
 
+    try {
 
-    /* =====================================================
-       TOAST
-    ===================================================== */
-
-    function showToast(
-        message
-    ) {
-
-        const toast =
-            document.getElementById(
-                "toast"
-            );
-
-
-        toast.textContent =
-            message;
-
-
-        toast.classList.add(
-            "show"
+        await navigator.clipboard.writeText(
+            CONFIG.cardUrl
         );
 
-
-        setTimeout(
-            function () {
-
-                toast.classList.remove(
-                    "show"
-                );
-
-            },
-            2500
+        showToast(
+            "Card link copied"
         );
 
     }
 
+    catch (error) {
 
-
-    /* =====================================================
-       BASIC EVENT TRACKING
-    ===================================================== */
-
-    function trackEvent(
-        eventName
-    ) {
-
-        try {
-
-            const params =
-                new URLSearchParams(
-                    window.location.search
-                );
-
-
-            const source =
-                params.get("source")
-                || "direct";
-
-
-            console.log(
-                "Detailing Experts:",
-                eventName,
-                "source:",
-                source
-            );
-
-
-        } catch (error) {
-
-            console.log(
-                "Tracking error",
-                error
-            );
-
-        }
+        window.prompt(
+            "Copy this link:",
+            CONFIG.cardUrl
+        );
 
     }
 
+}
 
 
-    /* =====================================================
-       PROFILE VIEW
-    ===================================================== */
+/* =====================================================
+   TOAST
+===================================================== */
 
-    trackEvent(
-        "profile_view"
+function showToast(message) {
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
     );
+
+
+    setTimeout(
+        function () {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        3000
+    );
+
+}
 
 </script>
 
