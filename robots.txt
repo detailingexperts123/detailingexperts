@@ -1,0 +1,8 @@
+# Detailing Experts - Search Engine Crawling Rules
+# https://detailingexperts.net/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://detailingexperts.net/sitemap.xml
