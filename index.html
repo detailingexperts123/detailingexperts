@@ -21,16 +21,43 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "AutoBodyShop",
-          "@id": "https://www.detailingexperts.net/#localbusiness",
+          "@type": "Organization",
+          "@id": "https://detailingexperts.net/#organization",
           "name": "Detailing Experts",
-          "image": "https://www.detailingexperts.net/logo.png",
-          "url": "https://www.detailingexperts.net/",
-          "telephone": "+91 7778883856",
+          "url": "https://detailingexperts.net/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://detailingexperts.net/logo.png"
+          },
           "email": "detailing@detailingexperts.net",
-          "areaServed": ["Vadodara", "Godhra", "Halol", "Kalol", "Anand", "Dahod", "Waghodia", "Dabhoi"],
-          "sameAs": ["https://www.instagram.com/detailingexpertsofficial", "https://www.youtube.com/@DetailingExperts_godhra", "https://www.facebook.com/share/1DGDUtkzfG/?mibextid=wwXIfr"],
-          "openingHours": [ "Mon-Sun 09:00-21:00"],    
+          "telephone": "+91 7778883856",
+          "sameAs": [
+            "https://www.instagram.com/detailingexpertsofficial",
+            "https://www.youtube.com/@DetailingExperts_godhra"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://detailingexperts.net/#website",
+          "url": "https://detailingexperts.net/",
+          "name": "Detailing Experts",
+          "publisher": {
+            "@id": "https://detailingexperts.net/#organization"
+          },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://detailingexperts.net/#webpage",
+          "url": "https://detailingexperts.net/",
+          "name": "Detailing Experts | Premium Car Detailing, PPF & Ceramic Coating",
+          "isPartOf": {
+            "@id": "https://detailingexperts.net/#website"
+          },
+          "about": {
+            "@id": "https://detailingexperts.net/#organization"
+          },
+          "inLanguage": "en-IN"
         }
       ]
     }
