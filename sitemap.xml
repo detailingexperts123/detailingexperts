@@ -75,5 +75,11 @@
   <url>
     <loc>https://detailingexperts.net/glass.html</loc>
   </url>
-
+  
+  <url>
+    <loc>https://detailingexperts.net/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>
