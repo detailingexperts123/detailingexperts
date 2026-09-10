@@ -468,7 +468,7 @@
                     Book a Free Vehicle Inspection 
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
-                <a href="https://wa.me/917778883856" class="btn-outline">
+                <a href="https://wa.me/917778883856" target="_blank" rel="noopener" class="btn-outline">
                     <i class="fa-brands fa-whatsapp"></i> 
                     Get a Quote on WhatsApp
                 </a>
@@ -935,7 +935,7 @@ Strongly Recommended. Thanks..."</p>
                                 Professional car detailing, PPF, ceramic coating and vehicle protection in Manjalpur, Vadodara.
                             </p>
                         </div>
-                        <a href="tel:+917778883856" class="btn-outline" style="border-color: rgba(255,255,255,0.2); color: #fff; width: 100%; justify-content: center;"><i class="fa-solid fa-phone"></i> Call Vadodara Studio</a>
+                        <a href="tel:+917778883856" class="btn-outline" aria-label="Call Detailing Experts Vadodara studio" style="border-color: rgba(255,255,255,0.2); color: #fff; width: 100%; justify-content: center;"><i class="fa-solid fa-phone"></i> Call Vadodara Studio</a>
                     </div>
                 </div>
             </div>
@@ -1058,34 +1058,51 @@ Strongly Recommended. Thanks..."</p>
             revealElements.forEach(el => revealObserver.observe(el));
 
             // 4. Animated Counters
+            const animateCounter = (counter) => {
+                if (counter.dataset.animated === 'true') return;
+
+                const target = parseFloat(counter.getAttribute('data-target'));
+                if (!Number.isFinite(target)) return;
+
+                counter.dataset.animated = 'true';
+                const isFloat = !Number.isInteger(target);
+                const duration = 1200;
+                const startTime = performance.now();
+
+                const updateCount = (currentTime) => {
+                    const progress = Math.min((currentTime - startTime) / duration, 1);
+                    const easedProgress = 1 - Math.pow(1 - progress, 3);
+                    const value = target * easedProgress;
+
+                    counter.innerText = isFloat
+                        ? value.toFixed(1)
+                        : Math.floor(value).toString();
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = isFloat
+                            ? target.toFixed(1)
+                            : target.toString();
+                    }
+                };
+
+                requestAnimationFrame(updateCount);
+            };
+
             const counterObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const countersInThisSection = entry.target.querySelectorAll('.counter');
-                        countersInThisSection.forEach(counter => {
-                            const target = parseFloat(counter.getAttribute('data-target'));
-                            const isFloat = target % 1 !== 0;
-                            const speed = 100; 
-                            
-                            const updateCount = () => {
-                                const count = parseFloat(counter.innerText) || 0;
-                                const inc = target / speed;
-                                
-                                if (count < target) {
-                                    counter.innerText = isFloat ? (count + inc).toFixed(1) : Math.ceil(count + inc);
-                                    setTimeout(updateCount, 20);
-                                } else {
-                                    counter.innerText = target;
-                                }
-                            };
-                            updateCount();
-                        });
+                        entry.target.querySelectorAll('.counter').forEach(animateCounter);
                         observer.unobserve(entry.target);
                     }
                 });
-            }, { threshold: 0.5 });
+            }, { threshold: 0.1 });
 
             document.querySelectorAll('.stats-wrap').forEach(section => {
+                section.querySelectorAll('.counter').forEach(counter => {
+                    counter.innerText = '0';
+                });
                 counterObserver.observe(section);
             });
 
